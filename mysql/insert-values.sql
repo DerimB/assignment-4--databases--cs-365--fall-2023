@@ -1,11 +1,11 @@
-INSERT INTO artist(artist_id,artist_name) VALUES (1, "Dawn of Midi");
+INSERT INTO artist VALUES (1, "Dawn of Midi");
 INSERT INTO artist VALUES (2, "Interpol");
 INSERT INTO artist VALUES (3, "The Chrome Cranks");
 INSERT INTO artist VALUES (4, "Melvins");
 INSERT INTO artist VALUES (5, "Mogwai");
 INSERT INTO artist VALUES (6, "Warpaint");
 
-INSERT INTO album(artist_id,album_id,album_name) VALUES (1, 1, "Dysnomia");
+INSERT INTO album VALUES (1, 1, "Dysnomia");
 INSERT INTO album VALUES (2, 2, "Turn on the Bright Lights");
 INSERT INTO album VALUES (3, 3, "Dead Cool");
 INSERT INTO album VALUES (4, 4, "Houdini");
@@ -13,7 +13,7 @@ INSERT INTO album VALUES (5, 5, "Come on Die Young");
 INSERT INTO album VALUES (5, 6, "Every Country’s Sun");
 INSERT INTO album VALUES (6, 7, "Heads Up");
 
-INSERT INTO track(album_id,track_id,track_name,time) VALUES (1,1, 'Io', '6.03');
+INSERT INTO track VALUES (1,1, 'Io', '6.03');
 INSERT INTO track VALUES (1,2, 'Sinope', '6.53');
 INSERT INTO track VALUES (1,3, 'Atlas', '6.37');
 INSERT INTO track VALUES (1,4, 'Nix', '3.39');
@@ -95,7 +95,7 @@ INSERT INTO track VALUES (7,73, 'Heads Up', '4.57');
 INSERT INTO track VALUES (7,74, 'Above Control', '5.06');
 INSERT INTO track VALUES (7,75, 'Today Dear', '4.49');
 
-INSERT INTO played(played, track_id) VALUES ("20060814102103", (SELECT track_id FROM track WHERE album_id = 1 ORDER BY track_id LIMIT 1));
+INSERT INTO played VALUES ("20060814102103", (SELECT track_id FROM track WHERE album_id = 1 ORDER BY track_id LIMIT 1));
 INSERT INTO played VALUES ("20060814102522", (SELECT track_id FROM track WHERE album_id = 2 ORDER BY track_id LIMIT 1));
 INSERT INTO played VALUES ("20060814103025", (SELECT track_id FROM track WHERE album_id = 3 ORDER BY track_id LIMIT 1));
 INSERT INTO played VALUES ("20060814103654", (SELECT track_id FROM track WHERE album_id = 4 ORDER BY track_id LIMIT 1));
