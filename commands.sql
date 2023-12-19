@@ -15,12 +15,12 @@ WHERE artist.artist_id IN (
     WHERE artist.artist_id = album.artist_id
 );
 
---Uses the compiles relation between the artist and album tables, This gets the output of the artist_name and album_name attributes as requested/shown.
+--Uses the Compiles relation between the artist and album tables, This gets the output of the artist_name and album_name attributes as requested/shown.
 SELECT artist.artist_name, album.album_name
 FROM artist
 JOIN album ON artist.artist_id = album.artist_id;
 
---Uses the contains relation between the album table and the track table.
+--Uses the Contains relation between the album table and the track table.
 SELECT album.album_name, track.track_name
 FROM album
 JOIN track ON album.album_id = track.album_id;
