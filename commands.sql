@@ -13,13 +13,16 @@ WHERE artist.artist_id IN (
 );
 
 SELECT artist.artist_name, album.album_name
-FROM artist
-JOIN album ON artist.artist_id = album.artist_id;
+FROM compiles
+JOIN artist ON compiles.artist_id = artist.artist_id
+JOIN album ON compiles.album_id = album.album_id;
 
 SELECT album.album_name, track.track_name
-FROM album
-JOIN track ON album.album_id = track.album_id;
+FROM contains
+JOIN album ON contains.album_id = album.album_id
+JOIN track ON contains.track_id = track.track_id;
 
-SELECT track.track_name, track.time
-FROM track
-JOIN played ON track.track_id = played.track_id;
+SELECT track.track_name, wasplayedat.played
+AS track_time
+FROM wasplayedat
+JOIN track ON wasplayedat.track_id = track.track_id;

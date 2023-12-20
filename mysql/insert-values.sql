@@ -103,3 +103,32 @@ INSERT INTO played VALUES ("20060814104143", (SELECT track_id FROM track WHERE a
 INSERT INTO played VALUES ("20060814104337", (SELECT track_id FROM track WHERE album_id = 6 ORDER BY track_id LIMIT 1));
 INSERT INTO played VALUES ("20060814104721", (SELECT track_id FROM track WHERE album_id = 7 ORDER BY track_id LIMIT 1));
 
+INSERT INTO compiles (artist_id, album_id)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 3),
+  (4, 4),
+  (5, 5),
+  (5, 6),
+  (6, 7);
+
+  INSERT INTO contains (album_id, track_id)
+VALUES
+  (1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 9),
+  (2, 10), (2, 11), (2, 12), (2, 13), (2, 14), (2, 15), (2, 16), (2, 17), (2, 18), (2, 19), (2, 20),
+  (3, 21), (3, 22), (3, 23), (3, 24), (3, 25), (3, 26), (3, 27), (3, 28),
+  (4, 29), (4, 30), (4, 31), (4, 32), (4, 33), (4, 34), (4, 35), (4, 36), (4, 37), (4, 38), (4, 39), (4, 40), (4, 41),
+  (5, 42), (5, 43), (5, 44), (5, 45), (5, 46), (5, 47), (5, 48), (5, 49), (5, 50), (5, 51), (5, 52), (5, 53),
+  (6, 54), (6, 55), (6, 56), (6, 57), (6, 58), (6, 59), (6, 60), (6, 61), (6, 62), (6, 63), (6, 64),
+  (7, 65), (7, 66), (7, 67), (7, 68), (7, 69), (7, 70), (7, 71), (7, 72), (7, 73), (7, 74), (7, 75);
+
+INSERT INTO wasplayedat (played, track_id)
+VALUES
+  ("20060814102103", (SELECT track_id FROM track WHERE album_id = 1 ORDER BY track_id LIMIT 1)),
+  ("20060814102522", (SELECT track_id FROM track WHERE album_id = 2 ORDER BY track_id LIMIT 1)),
+  ("20060814103025", (SELECT track_id FROM track WHERE album_id = 3 ORDER BY track_id LIMIT 1)),
+  ("20060814103654", (SELECT track_id FROM track WHERE album_id = 4 ORDER BY track_id LIMIT 1)),
+  ("20060814104143", (SELECT track_id FROM track WHERE album_id = 5 ORDER BY track_id LIMIT 1)),
+  ("20060814104337", (SELECT track_id FROM track WHERE album_id = 6 ORDER BY track_id LIMIT 1)),
+  ("20060814104721", (SELECT track_id FROM track WHERE album_id = 7 ORDER BY track_id LIMIT 1));

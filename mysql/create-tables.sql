@@ -32,3 +32,30 @@ CREATE TABLE IF NOT EXISTS played (
   INDEX index_played (played)
 );
 
+CREATE TABLE IF NOT EXISTS compiles (
+  artist_id  INT          NOT NULL,
+  album_id   INT          NOT NULL,
+  PRIMARY KEY (artist_id, album_id),
+  FOREIGN KEY (artist_id) REFERENCES artist(artist_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (album_id) REFERENCES album(album_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  INDEX index_artist_id (artist_id),
+  INDEX index_album_id (album_id)
+);
+
+CREATE TABLE IF NOT EXISTS contains (
+  album_id   INT          NOT NULL,
+  track_id   INT          NOT NULL,
+  PRIMARY KEY (album_id, track_id),
+  FOREIGN KEY (album_id) REFERENCES album(album_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (track_id) REFERENCES track(track_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  INDEX index_album_id (album_id),
+  INDEX index_track_id (track_id)
+);
+
+CREATE TABLE IF NOT EXISTS wasplayedat (
+  played     TIMESTAMP    NOT NULL,
+  track_id   INT          NOT NULL,
+  PRIMARY KEY (played, track_id),
+  FOREIGN KEY (track_id) REFERENCES track(track_id) ON DELETE CASCADE ON UPDATE CASCADE,
+  INDEX index_track_id (track_id)
+);
